@@ -6,7 +6,7 @@ export default async function Page({
 }: {
   params: { categorySlug: string };
 }) {
-  const category = await getCategory(params.categorySlug);
+  const category = await getCategory((await params).categorySlug);
 
   return (
     <div className="space-y-4">

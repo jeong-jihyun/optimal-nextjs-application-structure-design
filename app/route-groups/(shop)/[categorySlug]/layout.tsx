@@ -1,6 +1,7 @@
-import { getCategories, getCategory } from "../../../data/category";
-import { TabGroup } from "../../../ui/tab-group";
-import { ClickCounter } from "../../../ui/click-counter";
+import { getCategories, getCategory } from "../../../../data/category";
+import { ClickCounter } from "../../../../ui/click-counter";
+import { TabGroup } from "../../../../ui/tab-group";
+
 
 export default async function Layout({
   children,

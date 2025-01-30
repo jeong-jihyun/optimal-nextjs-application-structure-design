@@ -1,5 +1,5 @@
-import { getCategory } from "../../../../data/category";
-import { SkeletonCard } from "../../../../ui/skeleton-card";
+import { getCategory } from "../../../../../data/category";
+import { SkeletonCard } from "../../../../../ui/skeleton-card";
 
 export default async function Page({
   params,
