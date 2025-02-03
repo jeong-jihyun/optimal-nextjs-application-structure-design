@@ -3,7 +3,21 @@
 import React from "react";
 import { Boundary } from "../../ui/boundary";
 import Button from "../../ui/button";
-
+/**
+ * <pre>
+ * </pre>
+ *
+ * @author jeongjihyun
+ * @since 2025-02-03
+ * @version 1.0
+ * @Modification
+ * <pre>
+ *     since          author              description
+ *  ===========    =============    ===========================
+ *  2025-02-03     jeongjihyun      최초 생성
+ *
+ * </pre>
+ */
 interface ErrorProps {
   error: { message: string };
   reset: () => void;
