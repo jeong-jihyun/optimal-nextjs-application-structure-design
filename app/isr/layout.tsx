@@ -1,6 +1,5 @@
-import { TabNavItem } from "../../ui/tab-nav-item";
-import React from "react";
 import { Metadata } from "next";
+import { TabGroup } from "../../ui/tab-group";
 /**
  * <pre>
  * </pre>
@@ -17,20 +16,20 @@ import { Metadata } from "next";
  * </pre>
  */
 export const metadata: Metadata = {
-  title: "레벨업 Next.js: 라우팅",
+  title: "레벨업 Next.js: ISR",
 };
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const ids = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
-export default async function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
   return (
     <div className="space-y-9">
-      <div className="flex justify-between">
-        <TabNavItem href="/">Back</TabNavItem>
-      </div>
-
+      <TabGroup
+        path="/isr"
+        items={[
+          { text: "홈" },
+          ...ids.map((x) => ({ text: `포스트 ${x.id}`, slug: String(x.id) })),
+        ]}
+      />
       <div>{children}</div>
     </div>
   );

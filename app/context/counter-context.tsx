@@ -1,7 +1,21 @@
 "use client";
 
 import React from "react";
-
+/**
+ * <pre>
+ * </pre>
+ *
+ * @author jeongjihyun
+ * @since 2025-02-03
+ * @version 1.0
+ * @Modification
+ * <pre>
+ *     since          author              description
+ *  ===========    =============    ===========================
+ *  2025-02-03     jeongjihyun      최초 생성
+ *
+ * </pre>
+ */
 const CounterContext = React.createContext<
   [number, React.Dispatch<React.SetStateAction<number>>] | undefined
 >(undefined);
