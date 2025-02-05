@@ -69,28 +69,26 @@ export default async function Page({ searchParams }: { searchParams: any }) {
                     <div className="text-gray-400">{option.name}</div>
 
                     <div className="flex gap-2 mt-1">
-                      {option.items.map((item, i) => {
-                        const isActive =
-                          // set the first item as active if no search param is set
-                          (!srhParams[option.value] && i === 0) ||
-                          // otherwise check if the current item is the active one
-                          item === srhParams[option.value];
+{option.items.map((item, i) => {
+  const isActive =
+    // set the first item as active if no search param is set
+    (!srhParams.get(option.value) && i === 0) ||
+    // otherwise check if the current item is the active one
+    item === srhParams.get(option.value);
 
-                        // create new searchParams object for easier manipulation
-                        const params = new URLSearchParams(
-                          srhParams.toString()
-                        );
-                        params.set(option.value, item);
-                        return (
-                          <ActiveLink
-                            key={item}
-                            isActive={isActive}
-                            searchParams={params.toString()}
-                          >
-                            {item}
-                          </ActiveLink>
-                        );
-                      })}
+  // create new searchParams object for easier manipulation
+  const params = new URLSearchParams(srhParams.toString());
+  params.set(option.value, item);
+  return (
+    <ActiveLink
+      key={item}
+      isActive={isActive}
+      searchParams={params.toString()}
+    >
+      {item}
+    </ActiveLink>
+  );
+})}
                     </div>
                   </div>
                 );
