@@ -19,7 +19,7 @@ import { Boundary } from "../../../../ui/boundary";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string; subCategorySlug: string };
+  params: Promise<{ categorySlug: string; subCategorySlug: string }>;
 }) {
   const category = await getCategory((await params).subCategorySlug);
 

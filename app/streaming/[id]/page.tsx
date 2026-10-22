@@ -23,12 +23,13 @@ import { Reviews, ReviewsSkeleton } from "../../../ui/product/reviews";
  *
  * </pre>
  */
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   return (
     <div className="space-y-8 lg:space-y-14">
       <SingleProduct
         data={fetch(
-          `https://app-router-api.vercel.app/api/products?id=${params.id}`
+          `https://app-router-api.vercel.app/api/products?id=${id}`
         )}
       />
 
@@ -44,7 +45,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <RecommendedProducts
           path="/streaming/"
           data={fetch(
-            `https://app-router-api.vercel.app/api/products?delay=500&filter=${params.id}`,
+            `https://app-router-api.vercel.app/api/products?delay=500&filter=${id}`,
             {
               cache: "no-store",
             }

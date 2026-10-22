@@ -19,7 +19,7 @@ import { Counter } from "../context-click-counter";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string };
+  params: Promise<{ categorySlug: string }>;
 }) {
   const category = await getCategory((await params).categorySlug);
 

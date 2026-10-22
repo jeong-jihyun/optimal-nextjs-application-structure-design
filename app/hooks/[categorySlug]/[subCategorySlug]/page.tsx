@@ -5,9 +5,9 @@ import { getCategory } from "../../../../data/category";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string; subCategorySlug: string };
+  params: Promise<{ categorySlug: string; subCategorySlug: string }>;
 }) {
-  const category = await getCategory(params.subCategorySlug);
+  const category = await getCategory((await params).subCategorySlug);
 
   return (
     <div className="space-y-9">

@@ -5,7 +5,7 @@ export async function generateStaticParams() {
   return [{ id: "1" }, { id: "2" }];
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
   // Await params to ensure they are resolved before use
   const { id } = await params;
 

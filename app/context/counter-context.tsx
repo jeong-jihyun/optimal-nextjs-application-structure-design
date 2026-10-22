@@ -29,12 +29,8 @@ export function CounterProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Ensure this function is only used in client-side components
+// 클라이언트 컴포넌트는 서버에서도 한 번 렌더링되므로 window 검사는 하지 않는다.
 export function useCounter() {
-  if (typeof window === "undefined") {
-    throw new Error("useCounter must be called in a client-side component");
-  }
-
   const context = React.useContext(CounterContext);
   if (context === undefined) {
     throw new Error("useCounter must be used within a CounterProvider");

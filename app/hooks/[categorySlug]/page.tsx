@@ -4,7 +4,7 @@ import { getCategory } from "../../../data/category";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string };
+  params: Promise<{ categorySlug: string }>;
 }) {
   const category = await getCategory((await params).categorySlug);
   //const category = getCategory(params.categorySlug);

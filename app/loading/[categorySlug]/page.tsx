@@ -5,7 +5,7 @@ import { SkeletonCard } from "../../../ui/skeleton-card";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string };
+  params: Promise<{ categorySlug: string }>;
 }) {
   const res = await fetch(
     `https://app-router-api.vercel.app/api/categories?delay=1000&slug=${

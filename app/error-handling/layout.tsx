@@ -18,9 +18,9 @@ import { TabGroup } from "../../ui/tab-group";
  */
 interface LayOutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     categorySlug: string;
-  };
+  }>;
 }
 
 export default async function Layout({ children, params }: LayOutProps) {

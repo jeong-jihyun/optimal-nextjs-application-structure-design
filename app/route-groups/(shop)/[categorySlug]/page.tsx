@@ -19,7 +19,7 @@ import { SkeletonCard } from "../../../../ui/skeleton-card";
 export default async function Page({
   params,
 }: {
-  params: { categorySlug: string };
+  params: Promise<{ categorySlug: string }>;
 }) {
   const category = await getCategory((await params).categorySlug);
 
